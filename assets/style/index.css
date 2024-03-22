@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+:root {
+  --transition: all .15s ease-in-out;
+  --background-dark: #181720;
+}
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.gap {
+  gap: 20px;
+}
+
+main {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-dark);
+  color: #fff;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+header, footer {
+  height: 60px;
+}
+
+footer {
+  background-color: var(--background-dark);
+}
+
+header {
+  background-color: #342d3e;
+  line-height: 60px;
+  color: #fff;
+}
+
+main {
+  height: calc(100vh - 60px - 60px);
+}
+
+.flex {
+  display: flex;
+}
+
+/*----------HEADER------------*/
+
+h1 {
+  font-weight: 300;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+nav ul  li {
+  list-style: none;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*--------CONTENT--------*/
+
+section {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 450px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.03);
+}
+
+form {
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+input {
+  height: 48px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  vertical-align: middle;
+}
+
+input[type=text] {
+  padding: 0 15px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.04);
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+input[type=button] {
+  margin-left: 20px;
+  width: 130px;
+  background-color: #3c57ff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #5067ff;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+}
+
+.temperature label {
+  margin-left: 5px;
+}
+
+.output, .formula {
+  padding: 0 15px;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 20px;
+  line-height: 60px;
+}
+
+.output {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.output p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.formula p {
+  background-color: transparent;
+}
+
+.formula p {color: rgba(255, 255, 255, 0.5);}
+
+/*-----LIGHT/DARK TOGGLE-----*/
+
+button {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 90px;
+  height: 50px;
+  padding: 0 11px;
+  border-radius: 50px;
+  background-color: #14131a;
+}
+
+.toggle i {
+  line-height: 50px;
+  font-size: 27px;
+  z-index: 9999;
+}
+
+.fa-moon {color: #fff;}
+.fa-sun {color: #526272;}
+
+.lightdark-circle {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #5067ff;
+  transition: .3s ease-in-out;
+}
+
+
+/*--------------------------*/
+/*       LIGHT-MODE         */
+/*--------------------------*/
+
+body.light-mode {
+  background-color: #f2f1f3;
+  color: #000;
+  transition: var(--transition);
+}
+
+section.light-mode {
+  background-color: #fff;
+}
+
+input[type=text].light-mode {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.output.light-mode {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.output p.light-mode {
+  color: #000;
+}
+
+.formula p.light-mode {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+button.light-mode {
+  background-color: #d2d1d2;
+}
+
+.lightdark-circle.light-mode {
+  position: absolute;
+  left: 45px;
+  top: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ffc950;
+  align-items: center;
+  transition: .3s ease-in-out;
+}
+
+.fa-moon.light-mode {color: #526272;}
+.fa-sun.light-mode {color: #576572;}
+
+.fa-moon.light-mode, .fa-sun.light-mode {
+  background-color: transparent;
+}
+
